@@ -1,0 +1,14 @@
+openai:
+    provider: openai
+    llm_api_base: https://api.openai.com/v1
+    llm_api_version: ''
+
+sglang:
+    provider: sglang
+    llm_api_base: http://localhost:xxxx/v1
+    llm_api_version: ''
+
+azure:
+    provider: azure
+    llm_api_base: http://xxx
+    llm_api_version: 'xxx'
