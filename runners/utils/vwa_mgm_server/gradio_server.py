@@ -122,40 +122,30 @@ RESET_BASH_FILES = {
 }
 
 def _reset_envs(env_names: List[str]):
-    all_sh_to_run = []
+    commands = []
     for env in env_names:
         if env in RESET_BASH_FILES:
             sh_file = RESET_BASH_FILES[env]
-            all_sh_to_run.append(f"sh {sh_file}")
+            commands.append(["sh", sh_file])
         else:
             logger.warning(f"Invalid environment name: {env}")
 
-    done_command = (
-        f"""curl -X POST http://localhost:{SERVER_PORT}/call/done_resetting """
-        """-s -H "Content-Type: application/json" -d '{"""
-        """"data": ["""
-        f"""{json.dumps(env_names)}"""
-        """]}'"""
-    )
+    done_command = [
+        "curl", "-X", "POST", f"http://localhost:{SERVER_PORT}/call/done_resetting",
+        "-s", "-H", "Content-Type: application/json",
+        "-d", json.dumps({"data": env_names})
+    ]
     
-    all_sh_to_run.append(done_command)
-    combined_command = " && ".join(all_sh_to_run)
+    commands.append(done_command)
 
     with open(RESET_LOG_FILE, 'w', encoding='utf-8') as log_file:
         pass
     log_file = open(RESET_LOG_FILE, 'a', encoding='utf-8')
 
-    logger.info(f"Running command: {combined_command}")
+    for command in commands:
+        logger.info(f"Running command: {' '.join(command)}")
+        subprocess.run(command, stdin=log_file, stdout=log_file, stderr=log_file, text=True)
 
-    _ = subprocess.Popen(
-        combined_command,
-        shell=True,
-        start_new_session=True,
-        stdin=log_file,
-        stdout=log_file,
-        stderr=log_file,
-        text=True
-    )
     return
 
 
