@@ -115,11 +115,20 @@ def update_reset_info(state: gr.State, env_to_reset: List[str]):
     return state
 
 
+RESET_BASH_FILES = {
+    "env1": "/path/to/env1_reset.sh",
+    "env2": "/path/to/env2_reset.sh",
+    # Add other environments as needed
+}
+
 def _reset_envs(env_names: List[str]):
     all_sh_to_run = []
     for env in env_names:
-        sh_file = RESET_BASH_FILES[env]
-        all_sh_to_run.append(f"sh {sh_file}")
+        if env in RESET_BASH_FILES:
+            sh_file = RESET_BASH_FILES[env]
+            all_sh_to_run.append(f"sh {sh_file}")
+        else:
+            logger.warning(f"Invalid environment name: {env}")
 
     done_command = (
         f"""curl -X POST http://localhost:{SERVER_PORT}/call/done_resetting """
