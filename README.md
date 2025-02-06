@@ -11,6 +11,8 @@ We present R-MCTS and Exploratory Learning for building o1-like models for agent
 
 <!-- <img style="aspect-ratio: 3.5;" src="media/learning-data.gif"> -->
 
+> You are currently at the branch that contains code for running VisualWebArena tasks. To run on OSWorld, please switch to the other branch.
+
 # Setup
 
 1. Install VWA repo, and follow its instruction of setting up websites (using either AWS or Docker)
