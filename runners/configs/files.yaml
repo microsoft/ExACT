@@ -1,0 +1,7 @@
+apple:
+  api_key_fpath: <apple's path to openai_api_key_envs.key>
+  osworld_data_dir: /abs_path_preferred/ExACT/data/osworld_data
+
+banana:
+  api_key_fpath: <apple's path to openai_api_key_envs.key>
+  osworld_data_dir: /abs_path_preferred/ExACT/data/osworld_data

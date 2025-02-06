@@ -1,0 +1,8 @@
+banana:
+  num_parallel: 2
+  main_api_providers:
+    - openai
+    - azure
+  run_tfiles: # path inside banana
+    - data/osworld_data/evaluation_examples/<test_file_1.json>
+    - data/osworld_data/evaluation_examples/<test_file_2.json>

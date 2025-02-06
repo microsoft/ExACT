@@ -1,0 +1,14 @@
+openai:
+  provider: openai
+  api_base: https://api.openai.com/v1
+  api_key: null  # runs os.environ['OPENAI_API_KEY']
+  api_version: ''
+  token_provider_base: ''
+
+# if you use azure, you can add the following:
+azure:
+  provider: azure
+  api_base: <azure's api_base>
+  api_key: empty
+  api_version: <azure's api_version>
+  token_provider_base: <optional, azure's token_provider_base>
