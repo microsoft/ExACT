@@ -11,6 +11,8 @@ We present R-MCTS and Exploratory Learning for building o1-like models for agent
 
 <!-- <img style="aspect-ratio: 3.5;" src="media/learning-data.gif"> -->
 
+> You are currently at the main page of the ExACT project. To run ExACT in OSWorld, please refer to this [branch](https://github.com/microsoft/ExACT/tree/osworld). To run on VisualWebArena, please refer to this [branch](https://github.com/microsoft/ExACT/tree/vwa).
+
 # Setup
 
 1. Install VWA repo, and follow its instruction of setting up websites (using either AWS or Docker)
