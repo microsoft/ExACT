@@ -13,6 +13,12 @@ We present R-MCTS and Exploratory Learning for building o1-like models for agent
 
 > You are currently at the main page of the ExACT project. To run ExACT in OSWorld, please refer to this [branch](https://github.com/microsoft/ExACT/tree/osworld). To run on VisualWebArena, please refer to this [branch](https://github.com/microsoft/ExACT/tree/vwa).
 
+
+# Updates:
+
+- [x] Released VWA training trajectories at https://huggingface.co/datasets/Columbia-NLP/ExACT-VWA
+
+
 # Setup
 
 1. Install VWA repo, and follow its instruction of setting up websites (using either AWS or Docker)
@@ -280,7 +286,7 @@ python runners/eval/eval_vwa_parallel.py \
 
 # Citation
 
-If you methods or code useful, please consider citing our paper:
+If you find our methods or code useful, please consider citing our paper:
 
 ```bash
 @misc{yu2024exactteachingaiagents,
